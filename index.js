@@ -7,13 +7,35 @@ server.connection({
   port: 8000
 })
 
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: (request, reply) => {
-    reply('hello hapi')
-  }
-})
+let goodOptions ={
+  reporters: [{
+    reporter: require('good-console'),
+    events: { log: '*', response: '*' }
+  }]
+}
 
-server.start(() => console.log(`Started at: ${server.info.uri}`))
+server.register({
+  register: require('good'),
+  options: goodOptions
+}, err => {
+
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: (request, reply) => {
+      reply('hello hapi')
+    }
+  })
+
+  server.route({
+    method: 'GET',
+    path: '/{name}',
+    handler: (request, reply) => {
+      reply(`hello ${request.params.name}`)
+    }
+  })
+
+  server.start(() => console.log(`Started at: ${server.info.uri}`))
+
+})
 
