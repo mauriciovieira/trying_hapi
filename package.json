@@ -1,0 +1,26 @@
+{
+  "name": "trying_hapi",
+  "version": "0.0.1",
+  "description": "Trying Hapi.js.",
+  "main": "index.js",
+  "dependencies": {
+    "hapi": "^13.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauriciovieira/trying_hapi.git"
+  },
+  "keywords": [
+    "Hapi.js"
+  ],
+  "author": "Mauricio Vieira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mauriciovieira/trying_hapi/issues"
+  },
+  "homepage": "https://github.com/mauriciovieira/trying_hapi#readme"
+}
