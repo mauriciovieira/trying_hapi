@@ -10,7 +10,7 @@ server.connection({
 let goodOptions ={
   reporters: [{
     reporter: require('good-console'),
-    events: { log: '*', response: '*' }
+    events: { log: ['error'], response: '*' }
   }]
 }
 
@@ -23,6 +23,8 @@ server.register({
     method: 'GET',
     path: '/',
     handler: (request, reply) => {
+      server.log('error', 'Oh no!')
+      server.log('info', 'replying')
       reply('hello hapi')
     }
   })
