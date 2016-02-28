@@ -10,7 +10,7 @@ function handler(request, reply) {
 
 server.route({
     method: 'GET',
-    path: '/users/{userId}',
+    path: '/users/{userId?}',
     handler: handler
   })
 
